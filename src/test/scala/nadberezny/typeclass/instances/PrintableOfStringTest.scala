@@ -1,10 +1,9 @@
-package nadberezny
-
-import org.scalatest.FunSuite
+package nadberezny.typeclass.instances
 
 import nadberezny.typeclass.Printable
 import nadberezny.typeclass.printable.instances._
 import nadberezny.typeclass.printable.syntax._
+import org.scalatest.FunSuite
 
 class PrintableOfStringTest extends FunSuite {
   val expected = "String value: 42"

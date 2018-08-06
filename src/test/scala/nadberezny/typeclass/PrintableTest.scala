@@ -1,9 +1,7 @@
-package nadberezny
+package nadberezny.typeclass
 
-import org.scalatest.FunSuite
-
-import nadberezny.typeclass.Printable
 import nadberezny.typeclass.printable.instances._
+import org.scalatest.FunSuite
 
 class PrintableTest extends FunSuite {
   test("apply summons implicit proof") {
