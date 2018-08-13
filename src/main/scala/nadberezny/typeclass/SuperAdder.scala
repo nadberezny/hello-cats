@@ -1,4 +1,4 @@
-package nadberezny
+package nadberezny.typeclass
 
 import nadberezny.typeclass.monoid.Monoid
 
