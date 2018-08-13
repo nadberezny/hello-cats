@@ -1,5 +1,7 @@
 package nadberezny.typeclass.monoid
 
+import nadberezny.SalesOrder
+
 object instances {
   implicit def optionOfIntAddMonoid[A](implicit instance: Monoid[A]): Monoid[Option[A]] =
     new Monoid[Option[A]] {
@@ -18,5 +20,12 @@ object instances {
     override def empty: Int = 0
 
     override def combine(x: Int, y: Int): Int = x + y
+  }
+
+  implicit val orderAddMonoid: Monoid[SalesOrder] = new Monoid[SalesOrder] {
+    override def empty: SalesOrder = SalesOrder(0, 0)
+
+    override def combine(x: SalesOrder, y: SalesOrder): SalesOrder =
+      SalesOrder(x.totalCost + y.totalCost, x.quantity + y.quantity)
   }
 }
